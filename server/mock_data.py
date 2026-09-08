@@ -35,5 +35,13 @@ recent_transactions = load_json_file('transactions.json')
 # Load purchase orders
 purchase_orders = load_json_file('purchase_orders.json')
 
+# Restocking orders submitted at runtime via POST /api/restocking/orders.
+# Not loaded from a file - this is in-memory-only state, reset on restart.
+restocking_orders = []
+
+# Tasks created at runtime via POST /api/tasks.
+# Not loaded from a file - this is in-memory-only state, reset on restart.
+tasks = []
+
 # All data is now loaded from JSON files in the data/ directory
 # This allows for easier maintenance and updates of the sample data

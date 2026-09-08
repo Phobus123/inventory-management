@@ -537,9 +537,9 @@ export default {
 }
 
 .legend-dot.procurement { background: #3b82f6; }
-.legend-dot.operational { background: #8b5cf6; }
+.legend-dot.operational { background: var(--color-purple); }
 .legend-dot.labor { background: #10b981; }
-.legend-dot.overhead { background: #f59e0b; }
+.legend-dot.overhead { background: var(--color-amber); }
 .legend-dot.revenue-color { background: #0f172a; }
 .legend-dot.cost-color { background: #ef4444; }
 
@@ -677,9 +677,9 @@ export default {
 }
 
 .bar-segment.procurement { background: #3b82f6; }
-.bar-segment.operational { background: #8b5cf6; }
+.bar-segment.operational { background: var(--color-purple); }
 .bar-segment.labor { background: #10b981; }
-.bar-segment.overhead { background: #f59e0b; }
+.bar-segment.overhead { background: var(--color-amber); }
 
 .bar-segment:hover {
   opacity: 0.8;

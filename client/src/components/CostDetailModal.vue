@@ -299,7 +299,7 @@ const close = () => {
 }
 
 .cost-item.operational .cost-icon {
-  background: #8b5cf6;
+  background: var(--color-purple);
   color: white;
 }
 
@@ -309,7 +309,7 @@ const close = () => {
 }
 
 .cost-item.overhead .cost-icon {
-  background: #f59e0b;
+  background: var(--color-amber);
   color: white;
 }
 

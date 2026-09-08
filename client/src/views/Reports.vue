@@ -142,38 +142,29 @@ export default {
     }
   },
   mounted() {
-    console.log('Reports component mounted')
     this.loadData()
   },
   methods: {
     async loadData() {
-      console.log('Loading reports data...')
       try {
         this.loading = true
 
         // Fetch quarterly data
-        console.log('Fetching quarterly data...')
         const quarterlyResponse = await axios.get('http://localhost:8001/api/reports/quarterly')
         this.quarterlyData = quarterlyResponse.data
-        console.log('Quarterly data:', this.quarterlyData)
 
         // Fetch monthly data
-        console.log('Fetching monthly data...')
         const monthlyResponse = await axios.get('http://localhost:8001/api/reports/monthly-trends')
         this.monthlyData = monthlyResponse.data
-        console.log('Monthly data:', this.monthlyData)
 
         // Calculate summary stats
-        console.log('Calculating summary stats...')
         this.calculateSummaryStats()
-        console.log('Summary stats calculated')
 
       } catch (err) {
-        console.log('Error loading reports:', err)
+        console.error('Error loading reports:', err)
         this.error = 'Failed to load reports: ' + err.message
       } finally {
         this.loading = false
-        console.log('Loading complete')
       }
     },
 
@@ -212,7 +203,6 @@ export default {
     },
 
     formatNumber(num) {
-      console.log('Formatting number:', num)
       // Format number with commas
       var str = num.toString()
       var parts = str.split('.')
@@ -240,7 +230,6 @@ export default {
     },
 
     formatMonth(monthStr) {
-      console.log('Formatting month:', monthStr)
       // Convert YYYY-MM to readable format
       var parts = monthStr.split('-')
       var year = parts[0]
@@ -253,7 +242,6 @@ export default {
     },
 
     getBarHeight(revenue) {
-      console.log('Calculating bar height for revenue:', revenue)
       // Calculate bar height (max height 200px)
       var maxRevenue = 0
       for (var i = 0; i < this.monthlyData.length; i++) {
@@ -319,25 +307,6 @@ export default {
 <style scoped>
 .reports {
   padding: 0;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.card-header {
-  margin-bottom: 1.5rem;
-}
-
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #0f172a;
-  margin: 0;
 }
 
 .reports-table {
@@ -438,28 +407,6 @@ export default {
   font-size: 1.875rem;
   font-weight: 700;
   color: #0f172a;
-}
-
-.badge {
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.badge.success {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.badge.warning {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.badge.danger {
-  background: #fee2e2;
-  color: #991b1b;
 }
 
 .positive-change {

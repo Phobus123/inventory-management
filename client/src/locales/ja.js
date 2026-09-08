@@ -6,6 +6,8 @@ export default {
     orders: '注文',
     finance: '財務',
     demandForecast: '需要予測',
+    restocking: '補充',
+    reports: 'レポート',
     companyName: '触媒コンポーネンツ',
     subtitle: '在庫管理システム'
   },
@@ -106,6 +108,7 @@ export default {
     title: '注文',
     description: '顧客注文の表示と管理',
     allOrders: 'すべての注文',
+    submittedOrders: '提出済み注文',
     totalOrders: '総注文数',
     totalRevenue: '総収益',
     avgOrderValue: '平均注文額',
@@ -125,7 +128,8 @@ export default {
       totalValue: '合計金額',
       status: 'ステータス',
       expectedDelivery: '予定配達日',
-      actualDelivery: '実際の配達日'
+      actualDelivery: '実際の配達日',
+      leadTime: 'リードタイム'
     }
   },
 
@@ -188,6 +192,37 @@ export default {
     }
   },
 
+  // Restocking
+  restocking: {
+    title: '補充',
+    description: '予算に基づく補充提案を確認し、補充注文を作成します',
+    budgetLabel: '補充予算',
+    recommendedItems: '推奨品目',
+    table: {
+      sku: 'SKU',
+      itemName: '品目名',
+      warehouse: '倉庫',
+      category: 'カテゴリ',
+      stockReorderPoint: '在庫数 / 再注文点',
+      forecastedDemand: '予測需要',
+      gap: '不足数',
+      recommendedQty: '推奨発注数',
+      unitCost: '単価',
+      estimatedCost: '見積コスト'
+    },
+    summary: {
+      budget: '予算',
+      itemsRecommended: '推奨品目数',
+      totalEstimatedCost: '見積コスト合計',
+      remainingBudget: '残り予算'
+    },
+    placeOrder: '注文する',
+    emptyState: 'この予算では推奨できる品目がありません。予算を増やすかフィルターを調整してください。',
+    successMessage: '注文{orderNumber}が正常に作成されました。リードタイムは{leadTime}日です。{ordersLink}で確認できます。',
+    ordersLink: '注文タブ',
+    errorMessage: '補充注文の送信に失敗しました'
+  },
+
   // Filters
   filters: {
     timePeriod: '期間',
@@ -206,7 +241,8 @@ export default {
     backordered: 'バックオーダー',
     inStock: '在庫あり',
     lowStock: '在庫僅少',
-    adequate: '適量'
+    adequate: '適量',
+    submitted: '提出済み'
   },
 
   // Trends
@@ -323,7 +359,8 @@ export default {
     search: '検索',
     filter: 'フィルター',
     export: 'エクスポート',
-    items: '件'
+    items: '件',
+    days: '日'
   },
 
   // Product Names
@@ -364,6 +401,7 @@ export default {
 
   // Customer Names
   customerNames: {
+    'Internal Restocking': '社内補充',
     'MegaCorp Industries': 'メガコープ工業',
     'Elite Systems Corp': 'エリートシステムズ',
     'Horizon Technologies': 'ホライズン技術',

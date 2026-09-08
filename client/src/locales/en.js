@@ -6,6 +6,8 @@ export default {
     orders: 'Orders',
     finance: 'Finance',
     demandForecast: 'Demand Forecast',
+    restocking: 'Restocking',
+    reports: 'Reports',
     companyName: 'Catalyst Components',
     subtitle: 'Inventory Management System'
   },
@@ -106,6 +108,7 @@ export default {
     title: 'Orders',
     description: 'View and manage customer orders',
     allOrders: 'All Orders',
+    submittedOrders: 'Submitted Orders',
     totalOrders: 'Total Orders',
     totalRevenue: 'Total Revenue',
     avgOrderValue: 'Avg Order Value',
@@ -125,7 +128,8 @@ export default {
       totalValue: 'Total Value',
       status: 'Status',
       expectedDelivery: 'Expected Delivery',
-      actualDelivery: 'Actual Delivery'
+      actualDelivery: 'Actual Delivery',
+      leadTime: 'Lead Time'
     }
   },
 
@@ -188,6 +192,37 @@ export default {
     }
   },
 
+  // Restocking
+  restocking: {
+    title: 'Restocking',
+    description: 'Get budget-based restocking recommendations and place replenishment orders',
+    budgetLabel: 'Restocking Budget',
+    recommendedItems: 'Recommended Items',
+    table: {
+      sku: 'SKU',
+      itemName: 'Item Name',
+      warehouse: 'Warehouse',
+      category: 'Category',
+      stockReorderPoint: 'Stock / Reorder Point',
+      forecastedDemand: 'Forecasted Demand',
+      gap: 'Gap',
+      recommendedQty: 'Recommended Qty',
+      unitCost: 'Unit Cost',
+      estimatedCost: 'Estimated Cost'
+    },
+    summary: {
+      budget: 'Budget',
+      itemsRecommended: 'Items Recommended',
+      totalEstimatedCost: 'Total Estimated Cost',
+      remainingBudget: 'Remaining Budget'
+    },
+    placeOrder: 'Place Order',
+    emptyState: 'No items can be recommended for this budget. Try increasing the budget or adjusting your filters.',
+    successMessage: 'Order {orderNumber} placed successfully with a lead time of {leadTime} days. View it in the {ordersLink}.',
+    ordersLink: 'Orders tab',
+    errorMessage: 'Failed to submit restocking order'
+  },
+
   // Filters
   filters: {
     timePeriod: 'Time Period',
@@ -206,7 +241,8 @@ export default {
     backordered: 'Backordered',
     inStock: 'In Stock',
     lowStock: 'Low Stock',
-    adequate: 'Adequate'
+    adequate: 'Adequate',
+    submitted: 'Submitted'
   },
 
   // Trends
@@ -323,6 +359,7 @@ export default {
     search: 'Search',
     filter: 'Filter',
     export: 'Export',
-    items: 'items'
+    items: 'items',
+    days: 'days'
   }
 }
